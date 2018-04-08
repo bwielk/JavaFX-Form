@@ -21,13 +21,16 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.text.Text?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml"
           alignment="center"
           hgap="10"
           vgap="10">
     <!--COLUMN O-->
-    <VBox GridPane.columnIndex="0">
+    <VBox GridPane.columnIndex="0" prefWidth="400">
         <Label GridPane.columnIndex="0" GridPane.rowIndex="1"
                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
                wrapText="true">
@@ -132,7 +135,7 @@
         <Button text="Run" GridPane.rowIndex="20" defaultButton="true"/>
     </VBox>
     <!--COLUMN 1-->
-    <VBox GridPane.columnIndex="1" minWidth="400">
+    <VBox GridPane.columnIndex="1" prefWidth="400">
         <Label text="Select the colour">
             <font>
                 <Font size="18"/>
@@ -145,5 +148,18 @@
             </font>
         </Label>
         <DatePicker GridPane.rowIndex="1"/>
+        <Accordion GridPane.rowIndex="2" maxWidth="300" expandedPane="$tp3">
+            <panes>
+                <TitledPane text="Title Pane 1">
+                    <Text text="Label Title 1 Label Title 1 Label Title 1 Label Title 1"/>
+                </TitledPane>
+                <TitledPane text="Title Pane 2">
+                    <Text text="Label Title 2 Label Title 2 Label Title 2 Label Title 2 Label Title 2 Label Title 2 Label Title 2 Label Title 2 Label Title 2 Label Title 2" wrappingWidth="400"/>
+                </TitledPane>
+                <TitledPane fx:id="tp3" text="Title Pane 3">
+                    <Text text="Label Title 3 Label Title 3 Label Title 3Label Title 3" />
+                </TitledPane>
+            </panes>
+        </Accordion>
     </VBox>
 </GridPane>
