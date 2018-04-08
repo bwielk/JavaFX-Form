@@ -18,6 +18,7 @@
 <?import java.lang.String ?>
 
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Slider?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
    <!--COLUMN O-->
@@ -106,6 +107,16 @@
                 </FXCollections>
             </items>
         </ChoiceBox>
-    <Button text="Run" GridPane.rowIndex="15" defaultButton="true"/>
+        <Label text="Select the value" GridPane.rowIndex="14">
+            <font>
+                <Font size="18"/>
+            </font>
+        </Label>
+        <Slider GridPane.rowIndex="15" min="0" max="100"
+                showTickLabels="true"
+                showTickMarks="true"
+                minorTickCount="4"
+                snapToTicks="true"/>
+    <Button text="Run" GridPane.rowIndex="20" defaultButton="true"/>
     </VBox>
 </GridPane>
