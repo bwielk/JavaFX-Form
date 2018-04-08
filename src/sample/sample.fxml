@@ -6,10 +6,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
 <GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
-          gridLinesVisible="true">
-    <Button text="Run" GridPane.rowIndex="0" GridPane.columnIndex="0" defaultButton="true"/>
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <Label GridPane.columnIndex="0" GridPane.rowIndex="1"
            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." wrapText="true">
         <font>
@@ -22,4 +24,32 @@
         <RadioButton GridPane.rowIndex="2" GridPane.columnIndex="0" text="Yes" selected="true" toggleGroup="$choiceToggleGroup"/>
         <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="0" text="No" toggleGroup="$choiceToggleGroup"/>
         <RadioButton GridPane.rowIndex="4" GridPane.columnIndex="0" text="I don't know. You pick." toggleGroup="$choiceToggleGroup"/>
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="5">
+        <Label text="Choose the county"></Label>
+        <CheckBox text="Midlothian"/>
+        <CheckBox text="Lanarkshire"/>
+        <CheckBox text="Highlands"/>
+    </VBox>
+    <fx:define>
+        <ToggleGroup fx:id="toggleToggleGroup"/>
+    </fx:define>
+    <VBox GridPane.rowIndex="6" GridPane.columnIndex="0">
+        <Label text="Click one of the buttons below to play with the toggles">
+            <font>
+                <Font name="Arial bold" size="10"/>
+            </font>
+        </Label>
+        <HBox>
+            <ToggleButton text="Hello" toggleGroup="$toggleToggleGroup"/>
+            <ToggleButton text="Bye" toggleGroup="$toggleToggleGroup"/>
+            <ToggleButton text="Toggle me" toggleGroup="$toggleToggleGroup"/>
+        </HBox>
+    </VBox>
+    <Label text="Would you like to subscribe to our newsletter?" GridPane.rowIndex="7" GridPane.columnIndex="0">
+        <font>
+            <Font name="Arial bold" size="12"/>
+        </font>
+    </Label>
+    <CheckBox text="subscribe" GridPane.rowIndex="8" GridPane.columnIndex="0" indeterminate="true"/>
+    <Button text="Run" GridPane.rowIndex="9" GridPane.columnIndex="0" defaultButton="true"/>
 </GridPane>
